@@ -53,7 +53,7 @@
     <keyboard-shortcut first-keystroke="shift control alt K" />
   </action>
   <action id="CopyReference">
-    <keyboard-shortcut first-keystroke="shift alt K" />
+    <keyboard-shortcut first-keystroke="control alt K" />
   </action>
   <action id="DSM.Close">
     <keyboard-shortcut first-keystroke="shift control F4" />
@@ -97,6 +97,10 @@
   <action id="EditorCutLineEnd">
     <keyboard-shortcut first-keystroke="alt K" />
   </action>
+  <action id="EditorDeleteLine">
+    <keyboard-shortcut first-keystroke="control Y" />
+    <keyboard-shortcut first-keystroke="shift alt K" />
+  </action>
   <action id="EditorDeleteToWordEnd">
     <keyboard-shortcut first-keystroke="control DELETE" />
     <keyboard-shortcut first-keystroke="alt D" />
@@ -114,6 +118,10 @@
     <keyboard-shortcut first-keystroke="shift alt N" />
   </action>
   <action id="EditorDuplicate" />
+  <action id="EditorIndentSelection">
+    <keyboard-shortcut first-keystroke="TAB" />
+    <keyboard-shortcut first-keystroke="control RIGHT" />
+  </action>
   <action id="EditorKillRegion">
     <keyboard-shortcut first-keystroke="shift alt W" />
   </action>
@@ -132,7 +140,6 @@
   <action id="EditorLookupDown" />
   <action id="EditorLookupUp" />
   <action id="EditorNextWord">
-    <keyboard-shortcut first-keystroke="control RIGHT" />
     <keyboard-shortcut first-keystroke="alt F" />
   </action>
   <action id="EditorPageDown">
@@ -148,7 +155,6 @@
     <keyboard-shortcut first-keystroke="alt Y" />
   </action>
   <action id="EditorPreviousWord">
-    <keyboard-shortcut first-keystroke="control LEFT" />
     <keyboard-shortcut first-keystroke="alt B" />
   </action>
   <action id="EditorRight">
@@ -177,6 +183,10 @@
     <keyboard-shortcut first-keystroke="shift control W" />
     <keyboard-shortcut first-keystroke="shift alt DOWN" />
   </action>
+  <action id="EditorUnindentSelection">
+    <keyboard-shortcut first-keystroke="shift TAB" />
+    <keyboard-shortcut first-keystroke="control LEFT" />
+  </action>
   <action id="EditorUp">
     <keyboard-shortcut first-keystroke="UP" />
     <keyboard-shortcut first-keystroke="alt P" />
@@ -198,6 +208,7 @@
   </action>
   <action id="GotoDeclaration">
     <mouse-shortcut keystroke="control button1" />
+    <keyboard-shortcut first-keystroke="alt ENTER" />
   </action>
   <action id="GotoLine">
     <keyboard-shortcut first-keystroke="control G" />
@@ -253,6 +264,9 @@
     <keyboard-shortcut first-keystroke="shift alt 7" />
   </action>
   <action id="ShowContent" />
+  <action id="ShowIntentionActions">
+    <keyboard-shortcut first-keystroke="shift alt ENTER" />
+  </action>
   <action id="SmartStepInto">
     <keyboard-shortcut first-keystroke="shift F7" />
     <keyboard-shortcut first-keystroke="alt RIGHT" />
@@ -264,9 +278,6 @@
   <action id="StepOver">
     <keyboard-shortcut first-keystroke="F8" />
     <keyboard-shortcut first-keystroke="alt DOWN" />
-  </action>
-  <action id="SwitchApply">
-    <keyboard-shortcut first-keystroke="shift alt ENTER" />
   </action>
   <action id="SwitchLeft">
     <keyboard-shortcut first-keystroke="shift alt LEFT" />
