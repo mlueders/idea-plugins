@@ -1,0 +1,36 @@
+<idea-plugin version="2">
+  <name>Roadkill Plugins</name>
+  <description>Roadkill Plugins</description>
+  <version>1.0</version>
+  <vendor>Roadkill.org</vendor>
+  <idea-version since-build="8000"/>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+      <action id="Roadkill.StopAllProcesses" class="org.roadkill.plugins.intellij.StopAllProcessesAction" text="Stop _All"
+              description="Stop all active processes" icon="/debugger/killProcess.png">
+          <add-to-group group-id="RunMenu" anchor="after" relative-to-action="Stop"/>
+          <keyboard-shortcut keymap="$default" first-keystroke="ctrl X" second-keystroke="T"/>
+      </action>
+      <action id="Roadkill.CutLine" class="org.roadkill.plugins.intellij.CutLineAction" text="Cut Line"
+              description="Cut current line and copy to kill ring">
+          <keyboard-shortcut keymap="$default" first-keystroke="shift alt K"/>
+      </action>
+      <action id="Roadkill.ShowInProjectView" class="org.roadkill.plugins.intellij.ShowInProjectViewAction"
+              text="ShowInProjectView" description="Scroll to selected editor in project view">
+          <keyboard-shortcut keymap="$default" first-keystroke="alt q"/>
+      </action>
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+</idea-plugin>
