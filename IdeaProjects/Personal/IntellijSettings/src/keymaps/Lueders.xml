@@ -25,6 +25,8 @@
     <keyboard-shortcut first-keystroke="control Z" />
     <keyboard-shortcut first-keystroke="alt SLASH" />
   </action>
+  <action id="ActivateHierarchyToolWindow" />
+  <action id="ActivateStructureToolWindow" />
   <action id="AddToFavoritesPopup" />
   <action id="Back">
     <keyboard-shortcut first-keystroke="control alt LEFT" />
@@ -126,6 +128,7 @@
   <action id="EditorIndentSelection">
     <keyboard-shortcut first-keystroke="TAB" />
     <keyboard-shortcut first-keystroke="control RIGHT" />
+    <keyboard-shortcut first-keystroke="alt 8" />
   </action>
   <action id="EditorKillRegion">
     <keyboard-shortcut first-keystroke="shift alt W" />
@@ -191,6 +194,7 @@
   <action id="EditorUnindentSelection">
     <keyboard-shortcut first-keystroke="shift TAB" />
     <keyboard-shortcut first-keystroke="control LEFT" />
+    <keyboard-shortcut first-keystroke="alt 7" />
   </action>
   <action id="EditorUp">
     <keyboard-shortcut first-keystroke="UP" />
@@ -216,6 +220,10 @@
   <action id="GotoDeclaration">
     <mouse-shortcut keystroke="control button1" />
     <keyboard-shortcut first-keystroke="alt ENTER" />
+  </action>
+  <action id="GotoFile">
+    <keyboard-shortcut first-keystroke="shift control N" />
+    <keyboard-shortcut first-keystroke="shift alt E" />
   </action>
   <action id="GotoLine">
     <keyboard-shortcut first-keystroke="control G" />
@@ -277,6 +285,10 @@
     <keyboard-shortcut first-keystroke="shift F6" />
     <keyboard-shortcut first-keystroke="shift alt R" />
   </action>
+  <action id="Replace">
+    <keyboard-shortcut first-keystroke="control R" />
+    <keyboard-shortcut first-keystroke="alt R" />
+  </action>
   <action id="Resume">
     <keyboard-shortcut first-keystroke="F9" />
     <keyboard-shortcut first-keystroke="alt UP" />
@@ -326,6 +338,10 @@
   <action id="ToggleLineBreakpoint">
     <keyboard-shortcut first-keystroke="control F8" />
     <keyboard-shortcut first-keystroke="shift alt B" />
+  </action>
+  <action id="TypeHierarchy">
+    <keyboard-shortcut first-keystroke="control H" />
+    <keyboard-shortcut first-keystroke="alt X" second-keystroke="H" />
   </action>
   <action id="tasks.activate" />
   <action id="tasks.open.in.browser" />
