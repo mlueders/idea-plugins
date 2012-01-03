@@ -17,11 +17,8 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 
 /**
- * Created by IntelliJ IDEA.
  * User: mike
- * Date: 12/28/11
- * Time: 12:34 PM
- * To change this template use File | Settings | File Templates.
+ * Date: 12/28/11 12:34 PM
  */
 public class StopAllProcessesAction extends AnAction {
     public void actionPerformed(AnActionEvent e) {
