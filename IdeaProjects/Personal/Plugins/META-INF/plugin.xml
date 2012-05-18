@@ -36,11 +36,13 @@
               description="Create a debug configuration from the current context">
           <keyboard-shortcut keymap="$default" first-keystroke="shift alt 8"/>
       </action>
-      mave<action id="Roadkill.Launcher" class="org.roadkill.plugins.intellij.launcher.LauncherAction" text=""
+      <!--
+      <action id="Roadkill.Launcher" class="org.roadkill.plugins.intellij.launcher.LauncherAction" text=""
               description="Allows bookmarking launch configurations">
           <keyboard-shortcut keymap="$default" first-keystroke="shift alt F7"/>
           <add-to-group group-id="MainToolBar" relative-to-action="Forward" anchor="after"/>
       </action>
+      -->
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
