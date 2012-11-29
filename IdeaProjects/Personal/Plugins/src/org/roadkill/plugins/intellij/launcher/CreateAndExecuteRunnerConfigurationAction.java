@@ -16,19 +16,23 @@ import org.roadkill.plugins.intellij.PluginUtils;
 public abstract class CreateAndExecuteRunnerConfigurationAction extends AnAction {
 
     public static class Run extends CreateAndExecuteRunnerConfigurationAction {
-        protected Executor getExecutor() {
-            return DefaultRunExecutor.getRunExecutorInstance();
+        public Run() {
+            super(ExecutorService.RUN);
         }
     }
 
     public static class Debug extends CreateAndExecuteRunnerConfigurationAction {
-        protected Executor getExecutor() {
-            return ExecutorRegistry.getInstance().getExecutorById(ToolWindowId.DEBUG);
+        public Debug() {
+            super(ExecutorService.DEBUG);
         }
     }
 
 
-    protected abstract Executor getExecutor();
+    private Executor executor;
+
+    protected CreateAndExecuteRunnerConfigurationAction(ExecutorService executorService) {
+        this.executor = executorService.getExecutor();
+    }
 
     public void actionPerformed(AnActionEvent e) {
         Project project = PluginUtils.getProject(e);
@@ -38,7 +42,6 @@ public abstract class CreateAndExecuteRunnerConfigurationAction extends AnAction
         manager.addConfiguration(configuration, false);
         manager.setSelectedConfiguration(configuration);
 
-        Executor executor = getExecutor();
         ProgramRunnerUtil.executeConfiguration(project, configuration, executor);
     }
 
