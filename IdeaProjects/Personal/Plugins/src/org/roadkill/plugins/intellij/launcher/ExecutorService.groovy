@@ -14,16 +14,16 @@ interface ExecutorService {
     ExecutorService RUN = new ExecutorService() {
         @Override
         Executor getExecutor() {
-            DefaultRunExecutor.getRunExecutorInstance();
+            DefaultRunExecutor.getRunExecutorInstance()
         }
     }
 
     ExecutorService DEBUG = new ExecutorService() {
         @Override
         Executor getExecutor() {
-            ExecutorRegistry.getInstance().getExecutorById(ToolWindowId.DEBUG);
+            ExecutorRegistry.getInstance().getExecutorById(ToolWindowId.DEBUG)
         }
     }
 
-    Executor getExecutor();
+    Executor getExecutor()
 }

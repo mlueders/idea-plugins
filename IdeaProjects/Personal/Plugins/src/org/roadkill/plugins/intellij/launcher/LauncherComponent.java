@@ -1,5 +1,6 @@
 package org.roadkill.plugins.intellij.launcher;
 
+import com.intellij.execution.RunManager;
 import com.intellij.execution.RunManagerEx;
 import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.execution.actions.ConfigurationContext;
@@ -84,10 +85,9 @@ public class LauncherComponent implements ProjectComponent {
 
     public List<RunnerAndConfigurationSettings> getLauncherConfigurations() {
         List<RunnerAndConfigurationSettings> activeConfigurationList = new ArrayList<RunnerAndConfigurationSettings>();
-        RunManagerEx runManager = RunManagerEx.getInstanceEx(project);
-        ConfigurationType[] types = runManager.getConfigurationFactories();
+        RunManagerEx runManager = getRunManager();
 
-        for (ConfigurationType type: types) {
+        for (ConfigurationType type: runManager.getConfigurationFactories()) {
             RunnerAndConfigurationSettings[] configurations = runManager.getConfigurationSettings(type);
             Collections.addAll(activeConfigurationList, configurations);
         }
@@ -98,10 +98,14 @@ public class LauncherComponent implements ProjectComponent {
         ConfigurationContext configurationContext = ConfigurationContext.getFromContext(context);
         RunnerAndConfigurationSettings configuration = configurationContext.getConfiguration();
 
-        RunManagerEx manager = RunManagerEx.getInstanceEx(project);
+        RunManagerEx manager = getRunManager();
         manager.addConfiguration(configuration, false);
         manager.setSelectedConfiguration(configuration);
         return configuration;
+    }
+
+    private RunManagerEx getRunManager() {
+        return RunManagerEx.getInstanceEx(project);
     }
 
     @NotNull
