@@ -2,22 +2,16 @@ package org.roadkill.plugins.intellij.launcher
 
 import com.intellij.execution.RunManagerEx
 import com.intellij.execution.RunnerAndConfigurationSettings
-
 import com.intellij.ide.DataManager
 import com.intellij.openapi.actionSystem.ex.ComboBoxAction
 import com.intellij.openapi.project.IndexNotReadyException
 import com.intellij.openapi.project.Project
-import javax.swing.JComponent
-
-import com.intellij.openapi.actionSystem.*
-import javax.swing.Icon
-import org.roadkill.plugins.intellij.launcher.LauncherComponent.LauncherState
-import com.intellij.openapi.wm.IdeFrame
-import javax.swing.JPanel
 import java.awt.BorderLayout
 import javax.swing.BorderFactory
-import java.awt.Component
-import com.intellij.util.ui.UIUtil
+import javax.swing.JComponent
+import javax.swing.JPanel
+import org.roadkill.plugins.intellij.launcher.LauncherComponent.LauncherState
+import com.intellij.openapi.actionSystem.*
 
 /**
  * User: mlueders

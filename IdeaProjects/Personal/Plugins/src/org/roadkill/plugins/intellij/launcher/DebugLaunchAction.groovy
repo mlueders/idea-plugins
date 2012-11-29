@@ -1,7 +1,5 @@
 package org.roadkill.plugins.intellij.launcher
 
-import com.intellij.openapi.actionSystem.AnActionEvent
-
 /**
  * User: mlueders
  * Date: 11/27/12
@@ -40,12 +38,7 @@ class DebugLaunchAction extends AbstractLauncherAction {
 
 
     public DebugLaunchAction(LauncherEnum launcher) {
-        super("Debug", launcher)
-    }
-
-    @Override
-    protected void actionPerformed(AnActionEvent e, LauncherComponent launcherComponent) {
-        launcherComponent.debugBoundConfiguration(launcher)
+        super("Debug", launcher, ExecutorService.DEBUG)
     }
 
 }

@@ -1,5 +1,8 @@
 package org.roadkill.plugins.intellij.launcher
 
+import com.intellij.execution.Executor
+import com.intellij.execution.ProgramRunnerUtil
+import com.intellij.execution.RunnerAndConfigurationSettings
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 
@@ -9,19 +12,25 @@ import com.intellij.openapi.actionSystem.AnActionEvent
  */
 abstract class AbstractLauncherAction extends AnAction {
 
-    protected abstract void actionPerformed(AnActionEvent e, LauncherComponent launcherComponent)
+    private Executor executor
+    private LauncherEnum launcher
 
-    protected LauncherEnum launcher;
-
-    public AbstractLauncherAction(String text, LauncherEnum launcher) {
+    public AbstractLauncherAction(String text, LauncherEnum launcher, ExecutorService executorService) {
         super(text)
         this.launcher = launcher
+        this.executor = executorService.executor
     }
 
     @Override
     final void actionPerformed(AnActionEvent e) {
         LauncherComponent launcherComponent = LauncherComponent.get(e.project)
-        actionPerformed(e, launcherComponent)
+
+        RunnerAndConfigurationSettings configuration = launcherComponent.getConfigurationForLauncher(launcher)
+        if (configuration == null) {
+            configuration = launcherComponent.createRunnerConfigurationFromContextAndMakeActive(e.dataContext)
+            launcherComponent.state.setConfigurationName(launcher, configuration.name)
+        }
+        ProgramRunnerUtil.executeConfiguration(e.project, configuration, executor);
     }
 
 }

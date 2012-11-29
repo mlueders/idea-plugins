@@ -1,7 +1,7 @@
 package org.roadkill.plugins.intellij.launcher
 
-import javax.swing.Icon
 import com.intellij.openapi.util.IconLoader
+import javax.swing.Icon
 
 /**
  * User: mlueders

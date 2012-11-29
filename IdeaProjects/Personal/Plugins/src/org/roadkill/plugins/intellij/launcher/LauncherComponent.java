@@ -1,11 +1,11 @@
 package org.roadkill.plugins.intellij.launcher;
 
-import com.intellij.execution.Executor;
-import com.intellij.execution.ProgramRunnerUtil;
 import com.intellij.execution.RunManagerEx;
 import com.intellij.execution.RunnerAndConfigurationSettings;
+import com.intellij.execution.actions.ConfigurationContext;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.ide.util.PropertiesComponent;
+import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
@@ -68,30 +68,15 @@ public class LauncherComponent implements ProjectComponent {
         return state;
     }
 
-    public void runBoundConfiguration(LauncherEnum launcher) {
-        execConfiguration(launcher, ExecutorService.RUN);
-    }
-
-    public void debugBoundConfiguration(LauncherEnum launcher) {
-        execConfiguration(launcher, ExecutorService.DEBUG);
-    }
-
-    public void execConfiguration(LauncherEnum launcher, ExecutorService executorService) {
-        Executor executor = executorService.getExecutor();
+    public RunnerAndConfigurationSettings getConfigurationForLauncher(LauncherEnum launcher) {
         String configurationName = state.getConfigurationName(launcher);
-        RunnerAndConfigurationSettings configuration = getConfigurationWithName(configurationName);
-
-        if (configuration != null) {
-            ProgramRunnerUtil.executeConfiguration(project, configuration, executor);
-        }
+        return (configurationName == null) ? null : getConfigurationWithName(configurationName);
     }
 
-    public RunnerAndConfigurationSettings getConfigurationWithName(String name) {
-        if (name != null) {
-            for (RunnerAndConfigurationSettings configuration : getLauncherConfigurations()) {
-                if (name.equals(configuration.getName())) {
-                    return configuration;
-                }
+    private RunnerAndConfigurationSettings getConfigurationWithName(String name) {
+        for (RunnerAndConfigurationSettings configuration : getLauncherConfigurations()) {
+            if (name.equals(configuration.getName())) {
+                return configuration;
             }
         }
         return null;
@@ -107,6 +92,16 @@ public class LauncherComponent implements ProjectComponent {
             Collections.addAll(activeConfigurationList, configurations);
         }
         return activeConfigurationList;
+    }
+
+    public RunnerAndConfigurationSettings createRunnerConfigurationFromContextAndMakeActive(DataContext context) {
+        ConfigurationContext configurationContext = ConfigurationContext.getFromContext(context);
+        RunnerAndConfigurationSettings configuration = configurationContext.getConfiguration();
+
+        RunManagerEx manager = RunManagerEx.getInstanceEx(project);
+        manager.addConfiguration(configuration, false);
+        manager.setSelectedConfiguration(configuration);
+        return configuration;
     }
 
     @NotNull

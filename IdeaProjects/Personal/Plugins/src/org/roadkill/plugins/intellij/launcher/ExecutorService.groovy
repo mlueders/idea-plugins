@@ -1,9 +1,9 @@
 package org.roadkill.plugins.intellij.launcher
 
 import com.intellij.execution.Executor
+import com.intellij.execution.ExecutorRegistry
 import com.intellij.execution.executors.DefaultRunExecutor
 import com.intellij.openapi.wm.ToolWindowId
-import com.intellij.execution.ExecutorRegistry
 
 /**
  * User: mlueders

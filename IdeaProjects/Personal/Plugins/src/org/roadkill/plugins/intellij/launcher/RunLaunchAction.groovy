@@ -1,7 +1,5 @@
 package org.roadkill.plugins.intellij.launcher
 
-import com.intellij.openapi.actionSystem.AnActionEvent
-
 /**
  * User: mlueders
  * Date: 11/28/12
@@ -40,12 +38,7 @@ class RunLaunchAction extends AbstractLauncherAction {
 
 
     public RunLaunchAction(LauncherEnum launcher) {
-        super("Run", launcher)
-    }
-
-    @Override
-    protected void actionPerformed(AnActionEvent e, LauncherComponent launcherComponent) {
-        launcherComponent.runBoundConfiguration(launcher)
+        super("Run", launcher, ExecutorService.RUN)
     }
 
 }
