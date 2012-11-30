@@ -28,6 +28,9 @@
               text="Show in Project View" description="Scroll to selected editor in project view">
           <keyboard-shortcut keymap="$default" first-keystroke="meta q"/>
       </action>
+      <action id="Roadkill.ActivateSelectedEditor" class="org.roadkill.plugins.intellij.ActivateSelectedEditor" text="Activate Selected Editor">
+          <keyboard-shortcut keymap="$default" first-keystroke="meta 3"/>
+      </action>
 
       <action id="Roadkill.RunActive" class="org.roadkill.plugins.intellij.launcher.CreateAndExecuteRunnerConfigurationAction$Run" text="Run Active"
               description="Create a run configuration from the current context" icon="/icons/run.png">
