@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/IntellijSettings/IdeaSettings.iml" filepath="$PROJECT_DIR$/IntellijSettings/IdeaSettings.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Plugins/Plugins.iml" filepath="$PROJECT_DIR$/Plugins/Plugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Roadkill/Roadkill.iml" filepath="$PROJECT_DIR$/Roadkill/Roadkill.iml" />
     </modules>
   </component>
 </project>
