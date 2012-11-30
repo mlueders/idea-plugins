@@ -6,11 +6,13 @@ import com.intellij.ide.DataManager
 import com.intellij.openapi.actionSystem.ex.ComboBoxAction
 import com.intellij.openapi.project.IndexNotReadyException
 import com.intellij.openapi.project.Project
+import org.roadkill.plugins.intellij.launcher.LauncherComponent.LauncherState
+
 import java.awt.BorderLayout
 import javax.swing.BorderFactory
 import javax.swing.JComponent
 import javax.swing.JPanel
-import org.roadkill.plugins.intellij.launcher.LauncherComponent.LauncherState
+
 import com.intellij.openapi.actionSystem.*
 
 /**
@@ -20,33 +22,23 @@ import com.intellij.openapi.actionSystem.*
 class BindableLauncherComboBoxAction extends ComboBoxAction {
 
     public static class First extends BindableLauncherComboBoxAction {
-        public First() {
-            super(LauncherEnum.FIRST)
-        }
+        public First() {super(LauncherEnum.FIRST)}
     }
 
     public static class Second extends BindableLauncherComboBoxAction {
-        public Second() {
-            super(LauncherEnum.SECOND)
-        }
+        public Second() {super(LauncherEnum.SECOND)}
     }
 
     public static class Third extends BindableLauncherComboBoxAction {
-        public Third() {
-            super(LauncherEnum.THIRD)
-        }
+        public Third() {super(LauncherEnum.THIRD)}
     }
 
     public static class Fourth extends BindableLauncherComboBoxAction {
-        public Fourth() {
-            super(LauncherEnum.FOURTH)
-        }
+        public Fourth() {super(LauncherEnum.FOURTH)}
     }
 
     public static class Fifth extends BindableLauncherComboBoxAction {
-        public Fifth() {
-            super(LauncherEnum.FIFTH)
-        }
+        public Fifth() {super(LauncherEnum.FIFTH)}
     }
 
 
@@ -114,9 +106,9 @@ class BindableLauncherComboBoxAction extends ComboBoxAction {
     @Override
     public JComponent createCustomComponent(final Presentation presentation) {
         JPanel panel = new JPanel(new BorderLayout())
-        panel.setBorder(BorderFactory.createEmptyBorder(0, 2, 0, 2))
+        panel.border = BorderFactory.createEmptyBorder(0, 2, 0, 2)
+        panel.opaque = false
         panel.add(createComboBoxButton(presentation))
-        panel.setOpaque(false)
         panel
     }
 
