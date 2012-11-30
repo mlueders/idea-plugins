@@ -3,18 +3,10 @@ package org.roadkill.plugins.intellij;
 import com.intellij.execution.ExecutionManager;
 import com.intellij.execution.KillableProcess;
 import com.intellij.execution.process.ProcessHandler;
-import com.intellij.execution.ui.RunContentDescriptor;
-import com.intellij.execution.ui.RunContentManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.actionSystem.Presentation;
-import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.IconLoader;
-import org.jetbrains.annotations.Nullable;
-
-import javax.swing.*;
 
 /**
  * User: mike

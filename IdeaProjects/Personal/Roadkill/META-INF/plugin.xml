@@ -6,7 +6,6 @@
   <idea-version since-build="8000"/>
 
   <application-components>
-    <!-- Add your application components here -->
   </application-components>
 
   <project-components>
@@ -29,6 +28,7 @@
               text="Show in Project View" description="Scroll to selected editor in project view">
           <keyboard-shortcut keymap="$default" first-keystroke="meta q"/>
       </action>
+
       <action id="Roadkill.RunActive" class="org.roadkill.plugins.intellij.launcher.CreateAndExecuteRunnerConfigurationAction$Run" text="Run Active"
               description="Create a run configuration from the current context" icon="/icons/run.png">
           <keyboard-shortcut keymap="$default" first-keystroke="shift meta 7"/>
@@ -72,6 +72,5 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
   </extensions>
 </idea-plugin>
