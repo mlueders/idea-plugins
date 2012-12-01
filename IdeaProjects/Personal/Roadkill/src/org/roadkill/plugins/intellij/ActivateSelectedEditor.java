@@ -4,6 +4,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.wm.IdeFocusManager;
 
 /**
  * User: mlueders
@@ -14,7 +15,8 @@ public class ActivateSelectedEditor extends AnAction {
     public void actionPerformed(AnActionEvent e) {
         Editor editor = FileEditorManager.getInstance(e.getProject()).getSelectedTextEditor();
         if (editor != null) {
-            editor.getContentComponent().grabFocus();
+            IdeFocusManager focusManager = IdeFocusManager.getInstance(editor.getProject());
+            focusManager.requestFocus(editor.getContentComponent(), true);
         }
     }
 
