@@ -3,6 +3,7 @@ package org.roadkill.plugins.intellij;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiDocumentManager;
@@ -22,6 +23,9 @@ public class ShowInProjectViewAction extends AnAction {
             PsiFile psiFile = PsiDocumentManager.getInstance(project).getPsiFile(editor.getDocument());
 
             if (psiFile != null) {
+                AnAction activateProjectAction = ActionManagerEx.getInstance().getAction("ActivateProjectToolWindow");
+                activateProjectAction.actionPerformed(event);
+
                 ProjectView projectView = ProjectView.getInstance(project);
                 projectView.select(psiFile, psiFile.getVirtualFile(), true);
             }
