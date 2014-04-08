@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <keymap version="1" name="Lueders" parent="$default">
     <action id="$Copy">
-        <keyboard-shortcut first-keystroke="control C"/>
         <keyboard-shortcut first-keystroke="control INSERT"/>
         <keyboard-shortcut first-keystroke="alt W"/>
     </action>
@@ -17,19 +16,15 @@
         <keyboard-shortcut first-keystroke="alt Y"/>
     </action>
     <action id="$Redo">
-        <keyboard-shortcut first-keystroke="shift control Z"/>
-        <keyboard-shortcut first-keystroke="shift alt BACK_SPACE"/>
         <keyboard-shortcut first-keystroke="shift alt SLASH"/>
     </action>
     <action id="$Undo">
-        <keyboard-shortcut first-keystroke="control Z"/>
         <keyboard-shortcut first-keystroke="alt SLASH"/>
     </action>
     <action id="ActivateHierarchyToolWindow"/>
     <action id="ActivateStructureToolWindow"/>
     <action id="AddToFavoritesPopup"/>
     <action id="Back">
-        <keyboard-shortcut first-keystroke="control alt LEFT"/>
         <keyboard-shortcut first-keystroke="alt U"/>
     </action>
     <action id="CheckinProject"/>
@@ -39,8 +34,6 @@
     <action id="CodeInspection.OnEditor"/>
     <action id="CollapseSelection"/>
     <action id="CommentByLineComment">
-        <keyboard-shortcut first-keystroke="control SLASH"/>
-        <keyboard-shortcut first-keystroke="control DIVIDE"/>
         <keyboard-shortcut first-keystroke="shift alt C"/>
     </action>
     <action id="CompareDirs"/>
@@ -71,8 +64,6 @@
     <action id="DatabaseView.ShowDiff"/>
     <action id="Debug">
         <keyboard-shortcut first-keystroke="shift F9"/>
-        <keyboard-shortcut first-keystroke="control F11"/>
-        <keyboard-shortcut first-keystroke="F12"/>
     </action>
     <action id="DebugClass">
         <keyboard-shortcut first-keystroke="shift control 7"/>
@@ -166,29 +157,23 @@
         <keyboard-shortcut first-keystroke="alt B"/>
     </action>
     <action id="EditorRight">
-        <keyboard-shortcut first-keystroke="RIGHT"/>
         <keyboard-shortcut first-keystroke="control F"/>
     </action>
     <action id="EditorScrollDown"/>
     <action id="EditorScrollToCenter">
-        <keyboard-shortcut first-keystroke="control M"/>
         <keyboard-shortcut first-keystroke="alt L"/>
     </action>
     <action id="EditorScrollUp"/>
     <action id="EditorSelectWord">
-        <keyboard-shortcut first-keystroke="control W"/>
         <keyboard-shortcut first-keystroke="shift alt UP"/>
     </action>
     <action id="EditorTextEnd">
-        <keyboard-shortcut first-keystroke="control END"/>
         <keyboard-shortcut first-keystroke="shift alt PERIOD"/>
     </action>
     <action id="EditorTextStart">
-        <keyboard-shortcut first-keystroke="control HOME"/>
         <keyboard-shortcut first-keystroke="shift alt COMMA"/>
     </action>
     <action id="EditorUnSelectWord">
-        <keyboard-shortcut first-keystroke="shift control W"/>
         <keyboard-shortcut first-keystroke="shift alt DOWN"/>
     </action>
     <action id="EditorUnindentSelection">
@@ -210,12 +195,18 @@
     <action id="Find">
         <keyboard-shortcut first-keystroke="alt F3"/>
     </action>
+    <action id="FindUsages">
+      <keyboard-shortcut first-keystroke="shift control U" />
+    </action>
     <action id="Forward">
         <keyboard-shortcut first-keystroke="control alt RIGHT"/>
         <keyboard-shortcut first-keystroke="alt I"/>
     </action>
     <action id="GotoClass">
         <keyboard-shortcut first-keystroke="shift alt O"/>
+    </action>
+    <action id="Generate">
+      <keyboard-shortcut first-keystroke="control G" />
     </action>
     <action id="GotoDeclaration">
         <mouse-shortcut keystroke="control button1"/>
@@ -226,7 +217,6 @@
         <keyboard-shortcut first-keystroke="shift alt E"/>
     </action>
     <action id="GotoLine">
-        <keyboard-shortcut first-keystroke="control G"/>
         <keyboard-shortcut first-keystroke="alt G"/>
     </action>
     <action id="GotoNextError">
@@ -236,6 +226,9 @@
     <action id="GotoPreviousError">
         <keyboard-shortcut first-keystroke="shift F2"/>
         <keyboard-shortcut first-keystroke="control COMMA"/>
+    </action>
+    <action id="GotoTest">
+      <keyboard-shortcut first-keystroke="shift control T" />
     </action>
     <action id="GuiDesigner.Duplicate"/>
     <action id="HideSideWindows">
@@ -278,43 +271,37 @@
     </action>
     <action id="RecentChanges"/>
     <action id="ReformatCode">
-        <keyboard-shortcut first-keystroke="control alt L"/>
         <keyboard-shortcut first-keystroke="shift alt F"/>
     </action>
     <action id="RenameElement">
-        <keyboard-shortcut first-keystroke="shift F6"/>
         <keyboard-shortcut first-keystroke="shift alt R"/>
     </action>
     <action id="Replace">
-        <keyboard-shortcut first-keystroke="control R"/>
         <keyboard-shortcut first-keystroke="alt R"/>
     </action>
     <action id="Resume">
-        <keyboard-shortcut first-keystroke="F9"/>
         <keyboard-shortcut first-keystroke="alt UP"/>
     </action>
     <action id="Run">
         <keyboard-shortcut first-keystroke="shift F10"/>
-        <keyboard-shortcut first-keystroke="F11"/>
     </action>
     <action id="RunClass">
-        <keyboard-shortcut first-keystroke="shift control F10"/>
         <keyboard-shortcut first-keystroke="shift alt 7"/>
     </action>
     <action id="ShowContent"/>
     <action id="ShowIntentionActions">
         <keyboard-shortcut first-keystroke="shift alt ENTER"/>
     </action>
+    <action id="ShowProjectStructureSettings">
+      <keyboard-shortcut first-keystroke="shift control S" />
+    </action>
     <action id="SmartStepInto">
-        <keyboard-shortcut first-keystroke="shift F7"/>
         <keyboard-shortcut first-keystroke="alt RIGHT"/>
     </action>
     <action id="StepOut">
-        <keyboard-shortcut first-keystroke="shift F8"/>
         <keyboard-shortcut first-keystroke="alt LEFT"/>
     </action>
     <action id="StepOver">
-        <keyboard-shortcut first-keystroke="F8"/>
         <keyboard-shortcut first-keystroke="alt DOWN"/>
     </action>
     <action id="SwitchApply">
@@ -336,7 +323,6 @@
     <action id="ToggleBookmark7"/>
     <action id="ToggleBookmarkWithMnemonic"/>
     <action id="ToggleLineBreakpoint">
-        <keyboard-shortcut first-keystroke="control F8"/>
         <keyboard-shortcut first-keystroke="shift alt B"/>
     </action>
     <action id="TypeHierarchy">
