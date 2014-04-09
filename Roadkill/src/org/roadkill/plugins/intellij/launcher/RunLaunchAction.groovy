@@ -1,5 +1,7 @@
 package org.roadkill.plugins.intellij.launcher
 
+import com.intellij.openapi.project.Project
+
 /**
  * User: mlueders
  * Date: 11/28/12
@@ -28,7 +30,11 @@ class RunLaunchAction extends AbstractLauncherAction {
 
 
     public RunLaunchAction(LauncherEnum launcher) {
-        super("Run", launcher, ExecutorService.RUN)
+		this(launcher, null)
     }
+
+	public RunLaunchAction(LauncherEnum launcher, Project project) {
+		super("Run", launcher, ExecutorService.RUN, project)
+	}
 
 }

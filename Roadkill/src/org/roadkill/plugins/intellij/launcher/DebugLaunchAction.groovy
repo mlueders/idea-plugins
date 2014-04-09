@@ -1,5 +1,7 @@
 package org.roadkill.plugins.intellij.launcher
 
+import com.intellij.openapi.project.Project
+
 /**
  * User: mlueders
  * Date: 11/27/12
@@ -28,7 +30,11 @@ class DebugLaunchAction extends AbstractLauncherAction {
 
 
     public DebugLaunchAction(LauncherEnum launcher) {
-        super("Debug", launcher, ExecutorService.DEBUG)
+		this(launcher, null)
     }
+
+	public DebugLaunchAction(LauncherEnum launcher, Project project) {
+		super("Debug", launcher, ExecutorService.DEBUG, project)
+	}
 
 }

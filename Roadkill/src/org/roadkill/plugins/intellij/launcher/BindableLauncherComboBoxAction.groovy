@@ -44,13 +44,16 @@ class BindableLauncherComboBoxAction extends ComboBoxAction {
 
     private class ClearAction extends AnAction {
 
-        public ClearAction() {
+		private Project project
+
+        public ClearAction(Project project) {
             super("Clear")
+			this.project = project
         }
 
         @Override
         void actionPerformed(AnActionEvent e) {
-            clearConfiguration(e)
+            clearConfiguration(project)
         }
     }
 
@@ -91,7 +94,7 @@ class BindableLauncherComboBoxAction extends ComboBoxAction {
         }
 
         public void actionPerformed(final AnActionEvent e) {
-            BindableLauncherComboBoxAction.this.bindConfiguration(e, myConfiguration)
+            BindableLauncherComboBoxAction.this.bindConfiguration(myProject, myConfiguration)
         }
     }
 
@@ -118,9 +121,15 @@ class BindableLauncherComboBoxAction extends ComboBoxAction {
         Project project = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext(button))
 
         if (project != null) {
-            actionGroup.add(new RunLaunchAction(launcher))
-            actionGroup.add(new DebugLaunchAction(launcher))
-            actionGroup.add(new ClearAction())
+			// NOTE: Ideally, we would just create actions without having to provide the project.  Problem is,
+			// all events generated from dynamically created actions seem to have the most recently opened project attached.
+			// So, if multiple projects are opened, the run/debug/clear actions invoked in one project could refer to the
+			// other project when the event is processed.  Sucks but understandable since actions are generally meant to
+			// be instantiated via plugin.xml, not dynamically.  As a workaround, pass the project to the actions instead
+			// of relying on the project associated with the event.
+            actionGroup.add(new RunLaunchAction(launcher, project))
+            actionGroup.add(new DebugLaunchAction(launcher, project))
+            actionGroup.add(new ClearAction(project))
 
             DefaultActionGroup historyActionGroup = new DefaultActionGroup("Bind", true)
             List<RunnerAndConfigurationSettings> launcherConfigurations = LauncherComponent.get(project).launcherConfigurations
@@ -149,13 +158,13 @@ class BindableLauncherComboBoxAction extends ComboBoxAction {
         state.getConfigurationName(launcher)
     }
 
-    protected void bindConfiguration(AnActionEvent e, RunnerAndConfigurationSettings configuration) {
-        LauncherState state = LauncherComponent.getState(e.project)
+    protected void bindConfiguration(Project project, RunnerAndConfigurationSettings configuration) {
+        LauncherState state = LauncherComponent.getState(project)
         state.setConfigurationName(launcher, configuration.name)
     }
 
-    protected void clearConfiguration(AnActionEvent e) {
-        LauncherState state = LauncherComponent.getState(e.project)
+    protected void clearConfiguration(Project project) {
+        LauncherState state = LauncherComponent.getState(project)
         state.clearConfigurationName(launcher)
     }
 
