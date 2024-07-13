@@ -170,7 +170,7 @@
     <keyboard-shortcut first-keystroke="shift meta period" />
   </action>
   <action id="EditorTextStart">
-    <keyboard-shortcut first-keystroke="shift meta less" />
+    <keyboard-shortcut first-keystroke="shift meta comma" />
   </action>
   <action id="EditorUnSelectWord">
     <keyboard-shortcut first-keystroke="shift meta down" />
@@ -265,11 +265,17 @@
   <action id="NewElement">
     <keyboard-shortcut first-keystroke="ctrl n" />
   </action>
+  <action id="NextProjectWindow">
+    <keyboard-shortcut first-keystroke="meta back_quote" />
+  </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="meta equals" />
   </action>
   <action id="OptimizeImports">
     <keyboard-shortcut first-keystroke="shift meta i" />
+  </action>
+  <action id="PreviousProjectWindow">
+    <keyboard-shortcut first-keystroke="shift meta back_quote" />
   </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="meta minus" />
