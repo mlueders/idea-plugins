@@ -1,0 +1,43 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>org.roadkill.plugins</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Roadkill</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="mike@roadkill.org" url="https://www.roadkill.org">Roadkill</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description>A collection of moderately useful plugins.</description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <action id="Roadkill.StopAllProcesses" class="org.roadkill.plugins.intellij.StopAllProcessesAction" text="Stop _All"
+                description="Stop all active processes" icon="/debugger/killProcess.svg">
+            <add-to-group group-id="RunMenu" anchor="after" relative-to-action="Stop"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl X" second-keystroke="T"/>
+        </action>
+        <action id="Roadkill.CutLine" class="org.roadkill.plugins.intellij.CutLineAction" text="Cut Line"
+                description="Cut current line and copy to kill ring">
+            <keyboard-shortcut keymap="$default" first-keystroke="shift meta K"/>
+        </action>
+        <action id="Roadkill.ActivateSelectedEditor" class="org.roadkill.plugins.intellij.ActivateSelectedEditor" text="Activate Selected Editor">
+            <keyboard-shortcut keymap="$default" first-keystroke="meta 3"/>
+        </action>
+
+    </actions>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+</idea-plugin>
